@@ -1,0 +1,8 @@
+
+
+
+ php artisan make:migration fornecedor
+
+php artisan make:model Fornecedor
+
+ php artisan make:controller FornecedorController

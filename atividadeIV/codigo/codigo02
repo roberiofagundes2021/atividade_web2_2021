@@ -1,0 +1,885 @@
+//controller entrada
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Models\Entrada;
+use App\Models\Fornecedor;
+use App\Models\Produto;
+
+class EntradaController extends Controller
+{
+    //
+     public function create(){
+        $Fornecedors = Fornecedor::get();
+        return view('entradas.create',compact('Fornecedors'));
+    }
+
+
+    public function store(Request $request){
+
+            $Entrada = new Entrada();
+            $Entrada->valortotaldanota =$request->valortotaldanota ;
+            $Entrada->dataentrada=$request->dataentrada;
+            $Entrada->id_fornecedors=$request->id_fornecedors;
+            $Entrada->timestamps=$request->timestamps;
+            $Entrada->save();
+    }
+}
+
+//model entrada 
+
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Entrada extends Model
+{
+    use HasFactory;
+    protected $table = "entradas";
+    protected $guarded = [];
+}
+
+// views entrada 
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>pagina de cadastro de forncedor</h1>
+<form action="storeentradas" method="post">
+    @csrf
+    <label for="nome">valor total da nota</label><br><br>
+    <input type="text" name="valortotaldanota" id="valortotaldanota"><br><br>
+
+    <label for="dataentrada">data da entrada</label><br><br>
+    <input type="text" name="dataentrada" id="dataentrada"><br><br>
+
+    <div>
+        <label for="id_fornecedors">fornecedor</label>
+        {{-- pega a variavel passada pelo metodo create do controller --}}
+        @foreach($Fornecedors as $fornecedor)
+            <select name="id_fornecedors">
+                <option value="{{ $fornecedor->id_fornecedors }}">
+                    {{ $fornecedor->nome }}
+                </option>
+            </select>
+        @endforeach
+    </div><br>
+
+
+
+    <input type="submit" value="cadastrar">
+    </label>
+
+</form>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+//controller itens_entradas 
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Models\ItensEntradas;
+use App\Models\Produto;
+use App\Models\Entrada;
+
+class ItensEntradasController extends Controller
+{
+    //
+    public function create(){
+        $Entradas = Entrada::get();
+        $Produtos = Produto::get();
+        return view('itens_entradas.create',compact('Entradas','Produtos'));
+    }
+
+
+    public function store(Request $request){
+
+            $ItensEntradas = new ItensEntradas();
+            $ItensEntradas->precocompra=$request->precocompra;
+            $ItensEntradas->quantidade=$request->quantidade;
+            $ItensEntradas->unidade=$request->unidade;
+            $ItensEntradas->ipi=$request->ipi;
+            $ItensEntradas->frete=$request->frete;
+            $ItensEntradas->icms=$request->icms;
+            $ItensEntradas->id_entradas=$request->id_entradas;
+            $ItensEntradas->id_produtos=$request->id_produtos;
+            $ItensEntradas->save();
+    }
+}
+
+
+
+
+
+
+
+//model itens_entradas 
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class ItensEntradas extends Model
+{
+    use HasFactory;
+    protected $table="itens_entradas";
+    protected $guarded = [];
+}
+
+
+
+
+
+
+
+
+
+
+
+//views itens_entradas 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>pagina de cadastro de forncedor</h1>
+<form action="storeitensentradas" method="post">
+    @csrf
+    <label for="precocompra">preco de compra</label><br><br>
+        <input type="text" name="precocompra" id="precocompra"><br><br>
+
+        <label for="quantidade">quantidade</label><br><br>
+        <input type="text" name="quantidade" id="quantidade"><br><br>
+
+        <label for="unidade">unidade</label><br><br>
+        <input type="text" name="unidade" id="unidade"><br><br>
+
+
+        <label for="ipi">ipi</label><br><br>
+        <input type="text" name="ipi" id="ipi"><br><br>
+
+        <label for="frete">frete</label><br><br>
+        <input type="text" name="frete" id="frete"><br><br>
+
+        <label for="icms">icms</label><br><br>
+        <input type="text" name="icms" id="icms"><br><br>
+
+
+        <div>
+            <label for="id_entradas">entrada</label>
+            {{-- pega a variavel passada pelo metodo create do controller --}}
+            @foreach($Entradas as $entrada)
+                <select name="id_entradas">
+                    <option value="{{ $entrada->id_entradas }}">
+                        {{ $entrada->created_at }}
+                    </option>
+                </select>
+            @endforeach
+        </div><br>
+
+        <div>
+            <label for="id_produtos">produto</label>
+            {{-- pega a variavel passada pelo metodo create do controller --}}
+            @foreach($Produtos as $produto)
+                <select name="id_produtos">
+                    <option value="{{ $produto->id_produtos }}">
+                        {{ $produto->nomedoproduto }}
+                    </option>
+                </select>
+            @endforeach
+        </div><br>
+
+        <input type="submit" value="cadastrar">
+    </label>
+
+</form>
+
+</body>
+</html>
+
+
+//controller itens_vendas 
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Models\Venda;
+use App\Models\Produto;
+use App\Models\Itens_Vendas;
+
+class ItensVendasController extends Controller
+{
+    //
+ 
+    public function create(){
+        $Vendas = Venda::get();
+        $Produtos = Produto::get();
+        return view('itens_vendas.create',compact('Vendas','Produtos'));
+    }
+
+
+    public function store(Request $request){
+
+            $Itens_Vendas = new Itens_Vendas();
+            $Itens_Vendas->quantidade_itens=$request->quantidade_itens;
+            $Itens_Vendas->id_vendas=$request->id_vendas;
+            $Itens_Vendas->id_produtos=$request->id_produtos;
+            $Itens_Vendas->save();
+    }
+}
+
+//model itens_vendas 
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Itens_Vendas extends Model
+{
+    use HasFactory;
+    protected $table="itens_vendas";
+    protected $fillable=['quantidade_itens','id_vendas','id_produtos','timestamps'];
+}
+
+//views itens_vendas 
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>pagina de cadastro de itens vendas</h1>
+<form action="storeitensvendas" method="post">
+    @csrf
+    <label for="quantidade_itens">quantidade de itens</label><br><br>
+    <input type="text" name="quantidade_itens" id="quantidade_itens"><br><br>
+
+   
+
+     <div>
+            <label for="id_produtos">produto</label>
+            {{-- pega a variavel passada pelo metodo create do controller --}}
+            @foreach($Produtos as $produto)
+                <select name="id_produtos">
+                    <option value="{{ $produto->id_produtos }}">
+                        {{ $produto->nomedoproduto }}
+                    </option>
+                </select>
+            @endforeach
+        </div><br>
+
+      <div>
+            <label for="id_vendas">venda</label>
+            {{-- pega a variavel passada pelo metodo create do controller --}}
+            @foreach($Vendas as $venda)
+                <select name="id_vendas">
+                    <option value="{{ $venda->id_vendas }}">
+                        {{ $venda->data_venda }}
+                    </option>
+                </select>
+            @endforeach
+        </div><br>
+
+    <input type="submit" value="cadastrar">
+    </label>
+
+</form>
+
+</body>
+</html>
+
+
+
+//controller produto 
+<?php
+
+namespace App\Http\Controllers;
+use App\Models\Produto;
+use App\Models\Marca;
+use App\Models\Categoria;
+
+use Illuminate\Http\Request;
+
+class ProdutoController extends Controller
+{
+    //
+
+    public function create(){
+        $Categorias = Categoria::get();
+        $Marcas = Marca::get();
+        return view('produtos.create',compact('Categorias','Marcas'));
+    }
+
+    public function store(Request $request){
+
+            $Produto = new Produto();
+            $Produto->nomedoproduto=$request->nomedoproduto;
+            $Produto->icms=$request->icms;
+            $Produto->ipi=$request->ipi;
+            $Produto->frete=$request->frete;
+            $Produto->valornafabrica=$request->valornafabrica;
+            $Produto->valordecompra=$request->valordecompra;
+            $Produto->lucro=$request->lucro;
+            $Produto->valordevenda=$request->valordevenda;
+            $Produto->desconto=$request->desconto;
+            $Produto->quantidade=$request->quantidade;
+            $Produto->datavencimento=$request->datavencimento;
+            $Produto->id_categorias=$request->id_categorias;
+            $Produto->id_marcas=$request->id_marcas;
+            $Produto->save();
+    }
+}
+
+
+
+
+
+//model produto 
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Produto extends Model
+{
+    use HasFactory;
+    protected $table="produtos";
+    protected $guarded = [];
+}
+
+
+
+//views produto 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>pagina de cadastro de produtos</h1>
+<form action="storeproduto" method="post">
+    @csrf
+    <label for="nomedoproduto">nome do produto</label><br><br>
+        <input type="text" name="nomedoproduto" id="nomedoproduto"><br><br>
+
+    <label for="icms">icms</label><br><br>
+        <input type="text" name="icms" id="icms"><br><br>
+
+    <label for="ipi">ipi</label><br><br>
+        <input type="text" name="ipi" id="ipi"><br><br>
+
+    <label for="frete">frete</label><br><br>
+        <input type="text" name="frete" id="frete"><br><br>
+
+    <label for="valornafabrica">valor na fabrica</label><br><br>
+        <input type="text" name="valornafabrica" id="valornafabrica"><br><br>
+
+
+    <label for="valordecompra">valor de compra</label><br><br>
+        <input type="text" name="valordecompra" id="valordecompra"><br><br>
+
+    <label for="lucro">lucro</label><br><br>
+        <input type="text" name="lucro" id="lucro"><br><br>
+
+    <label for="valordevenda">valor de venda</label><br><br>
+        <input type="text" name="valordevenda" id="valordevenda"><br><br>
+
+    <label for="desconto">desconto</label><br><br>
+        <input type="text" name="desconto" id="desconto"><br><br>
+
+    <label for="quantidade">quantidade</label><br><br>
+        <input type="text" name="quantidade" id="quantidade"><br><br>
+
+    <label for="datavencimento">data de vencimento</label><br><br>
+        <input type="date" name="datavencimento" id="datavencimento"><br><br>
+
+     <div>
+            <label for="id_categorias">categoria</label>
+            {{-- pega a variavel passada pelo metodo create do controller --}}
+            @foreach($Categorias as $categoria)
+                <select name="id_categorias">
+                    <option value="{{ $categoria->id_categorias }}">
+                        {{ $categoria->nome }}
+                    </option>
+                </select>
+            @endforeach
+        </div><br>
+
+      <div>
+      
+      <div>
+            <label for="id_marcas">marcas</label>
+            {{-- pega a variavel passada pelo metodo create do controller --}}
+            @foreach($Marcas as $marca)
+                <select name="id_marcas">
+                    <option value="{{ $marca->id_marcas }}">
+                        {{ $marca->nome }}
+                    </option>
+                </select>
+            @endforeach
+        </div><br>
+
+      <div>
+
+        <input type="submit" value="cadastrar">
+
+</form>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+<?php
+
+//controller venda 
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Models\Venda;
+use App\Models\Cliente;
+
+class VendasController extends Controller
+{
+    //
+    public function create(){
+        $Clientes = Cliente::get();
+        return view('vendas.create',compact('Clientes'));
+    }
+
+    public function store(Request $request){
+
+            $Venda = new Venda();
+            $Venda->descontototal=$request->descontototal;
+            $Venda->descontoacerto=$request->descontoacerto;
+            $Venda->data_venda=$request->data_venda;
+            $Venda->id_clientes=$request->id_clientes;
+            $Venda->save();
+    }
+}
+
+
+//model venda 
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Venda extends Model
+{
+    use HasFactory;
+    protected $table="vendas";
+    protected $fillable=['descontototal','descontoacerto','id_clientes'];
+}
+
+
+//views venda 
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>pagina de cadastro de vendas</h1>
+<form action="storevendas" method="post">
+    @csrf
+    <label for="nome">descontototal</label><br><br>
+        <input type="text" name="descontototal" id="descontototal"><br><br>
+
+        <label for="descontoacerto">descontoacerto</label><br><br>
+        <input type="text" name="descontoacerto" id="descontoacerto"><br><br>
+
+         <label for=" data_venda"> data_venda</label><br><br>
+        <input type="date" name=" data_venda" id=" data_venda"><br><br>
+
+       
+        
+        <div>
+            <label for="id_clientes">cliente</label>
+            {{-- pega a variavel passada pelo metodo create do controller --}}
+            @foreach($Clientes as $cliente)
+                <select name="id_clientes">
+                    <option value="{{ $cliente->id_clientes }}">
+                        {{ $cliente->nome }}
+                    </option>
+                </select>
+            @endforeach
+        </div><br>
+    </label>
+
+    <input type="submit" value="cadastrar">
+
+</form>
+
+
+</body>
+</html>
+
+
+
+//rotas do projeto 
+<?php
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\FornecedorController;
+use App\Http\Controllers\EntradaController;
+use App\Http\Controllers\ItensEntradasController;
+use App\Http\Controllers\ItensVendasController;
+use App\Http\Controllers\MarcaController;
+use App\Http\Controllers\ProdutoController;
+use App\Http\Controllers\VendasController;
+
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/clientes',[ClienteController::class, 'show']);
+
+Route::get('/parametros', function (){
+    $nome="Fabio";
+    $idade="30";
+
+    return view ('aluno',
+    [
+        'pnome'=> $nome,
+        'pidade'=>$idade,
+        'pprofissao'=>"programador"
+    ]);
+});
+
+
+//paramentro id opcional
+Route::get('/popcional/{id}', function($id){
+    return view('aluno',['id'=> $id]);
+});
+
+//parametro id obrigatorio
+Route::get('/popcional/{id?}', function($id){
+    return view('aluno',['id?'=> $id]);
+});
+
+//parametro com valor padrão
+Route::get('/popcional/{id?}', function($id=1){
+    return view('aluno',['id'=> $id]);
+});
+
+//parametro com valor padrão diferente de null
+Route::get('/popcional/{id?}', function($id=null){
+    return view('aluno',['id'=> $id]);
+});
+
+//Utilização dos query params
+Route::get('/queryparams', function(){
+    //acessa os paramentros vindos do navegador pelo metodo
+    $busca = request('pesquisa');
+    return view('contato',['pesquisa'=>$pesquisa]);
+});
+
+Route::get('/createcategoria',[CategoriaController::class,'create']);
+Route::post('/storecategoria',[CategoriaController::class,'store']);
+
+Route::get('/createcliente',[ClienteController::class,'create']);
+Route::post('/storecliente',[ClienteController::class,'store']);
+
+Route::get('/createentradas',[EntradaController::class,'create']);
+Route::post('/storeentradas',[EntradaController::class,'store']);
+
+Route::get('/createfornecedor',[FornecedorController::class,'create']);
+Route::post('/storefornecedor',[FornecedorController::class,'store']);
+
+Route::get('/createitensentradas',[ItensEntradasController::class,'create']);
+Route::post('/storeitensentradas',[ItensEntradasController::class,'store']);
+
+Route::get('/createitensvendas',[ItensVendasController::class,'create']);
+Route::post('/storeitensvendas',[ItensVendasController::class,'store']);
+
+Route::get('/createmarca',[MarcaController::class,'create']);
+Route::post('/storemarca',[MarcaController::class,'store']);
+
+Route::get('/createproduto',[ProdutoController::class,'create']);
+Route::post('/storeproduto',[ProdutoController::class,'store']);
+
+Route::get('/createvendas',[VendasController::class,'create']);
+Route::post('/storevendas',[VendasController::class,'store']);
+
+
+
+
+// migrations 
+
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateItensVendasTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('itens_vendas', function (Blueprint $table) {
+            $table->increments('id_itens__vendas');
+            $table->float('quantidade_itens');
+            $table->integer('id_vendas')->unsigned();
+            $table->foreign('id_vendas')->references('id_vendas')->on('vendas');
+            $table->integer('id_produtos')->unsigned();
+            $table->foreign('id_produtos')->references('id_produtos')->on('produtos');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('itens_vendas');
+    }
+}
+
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateVendasTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('vendas', function (Blueprint $table) {
+            $table->increments('id_vendas');
+            $table->date('data_venda');
+            $table->float('descontototal');
+            $table->float('descontoacerto');
+            $table->integer('id_clientes')->unsigned();
+            $table->foreign('id_clientes')->references('id_clientes')->on('clientes');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('vendas');
+    }
+}
+
+
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateItensEntradasTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('itens_entradas', function (Blueprint $table) {
+            $table->increments('id_itens_entradas');
+            $table->float('precocompra');
+            $table->float('quantidade');
+            $table->float('unidade');
+            $table->float('ipi');
+            $table->float('frete');
+            $table->float('icms');
+            $table->integer('id_entradas')->unsigned();
+            $table->foreign('id_entradas')->references('id_entradas')->on('entradas');
+            $table->integer('id_produtos')->unsigned();
+            $table->foreign('id_produtos')->references('id_produtos')->on('produtos');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('itens_entradas');
+    }
+}
+
+
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateProdutosTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('produtos', function (Blueprint $table) {
+            $table->increments('id_produtos');
+            $table->string('nomedoproduto');
+            $table->float('icms');
+            $table->float('ipi');
+            $table->float('frete');
+            $table->float('valornafabrica');
+            $table->float('valordecompra');
+            $table->float('lucro');
+            $table->float('valordevenda');
+            $table->float('desconto');
+            $table->float('quantidade');
+            $table->date('datavencimento');
+            $table->integer('id_categorias')->unsigned();
+            $table->foreign('id_categorias')->references('id_categorias')->on('categorias');
+            $table->integer('id_marcas')->unsigned();
+            $table->foreign('id_marcas')->references('id_marcas')->on('marcas');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('produtos');
+    }
+}
+
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateEntradasTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('entradas', function (Blueprint $table) {
+            $table->increments('id_entradas');
+            $table->float('valortotaldanota');
+            $table->date('dataentrada');
+            $table->integer('id_fornecedors')->unsigned();
+            $table->foreign('id_fornecedors')->references('id_fornecedors')->on('fornecedors');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('entradas');
+    }
+}
+
+
+
+

@@ -1,55 +1,54 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\ItensVendas;
+use App\Models\Produto;
+use App\Models\Venda;
+use App\Http\Requests\StoreItensVendaRequest;
+
 
 use Illuminate\Http\Request;
-use App\Models\Venda;
-use App\Models\Produto;
-use App\Models\Itens_Vendas;
-use App\Http\Requests\StoreItemVendaRequest;
 
 class ItensVendasController extends Controller
 {
-    //
-
     public function create(){
-        $Vendas = Venda::get();
-        $Produtos = Produto::get();
-        return view('itens_vendas.create',compact('Vendas','Produtos'));
-    }
-
-    public function index(){
-        $Itens_Vendas = Itens_Vendas::all();
-        return view('itens_vendas.index',compact('Itens_Vendas'));
-
+    $ItensVendas = ItensVendas::get();
+    $Produto = Produto::get();
+    $Venda = Venda::get();
+    return view('ItensVendas.create',compact('Produto','Venda'));
     }
 
     public function edit($id){
-        $Itens_Vendas = Itens_Vendas::findorFail($id);
-        return view('itens_vendas.edit',['Itens_Vendas'=>$Itens_Vendas]);
+        $ItensVendas=ItensVendas::findorFail($id);
+        return view('ItensVendas.edit',['ItensVendas'=>$ItensVendas]);
     }
 
      public function update(Request $request){
-        Itens_Vendas::find($request->id)->update($request->except('_token'));
-        return redirect('index/itensVenda')->with('msg', 'alteração realdizado com sucesso');
-        
+       ItensVendas::find($request->id)->update($request->except('_token'));
+        return redirect('index/ItensVendas')->with('msg', 'alteração realdizado com sucesso');
+
     }
 
-    public function destroy($id){
-        $Itens_Vendas=Itens_Vendas::findOrFail($id);
-        $Itens_Vendas->delete();
-        return view('itens_vendas.index');
+     public function destroy($id)
+    {
+      ItensVendas::findorFail($id)->delete();
+      return redirect('ItensVendas.index')->with('msg', 'ItensVendas');
+    }
+
+    public function index(){
+        $ItensVendas = ItensVendas::all();
+        return view('ItensVendas.index',compact('ItensVendas'));
     }
 
 
-    public function store(StoreItemVendaRequest $request){
+    public function store(StoreItensVendaRequest $request){
 
-            $Itens_Vendas = new Itens_Vendas();
-            $Itens_Vendas->quantidade_itens=$request->quantidade_itens;
-            $Itens_Vendas->id=$request->id;
-            $Itens_Vendas->produto_id=$request->produto_id;
-            $Itens_Vendas->valor=$request->valor;
-            $Itens_Vendas->save();
+            $ItensVendas=new ItensVendas();
+            $ItensVendas->quantidade_itens=$request->quantidade_itens;
+            $ItensVendas->desconto=$request->desconto;
+            $ItensVendas->valor=$request->valor;
+            $ItensVendas->venda_id=$request->venda_id;
+            $ItensVendas->produto_id=$request->produto_id;
+            $ItensVendas->save();
     }
 }
-

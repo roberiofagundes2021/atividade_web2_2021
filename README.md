@@ -4,6 +4,7 @@ endereço do sistema hospedado:
 
 https://perfumeshop2022.herokuapp.com/
 
+O sistema e feito utilizando a linguagem php como framework laravel 8 
 <b>manual de como instalar o sistema</b><br>
 1º instalar o docker<br>
 2º instalar os container do docker<br>

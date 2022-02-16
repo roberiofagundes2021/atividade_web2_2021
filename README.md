@@ -4,8 +4,16 @@ endereço do sistema hospedado:
 
 https://perfumeshop2022.herokuapp.com/
 
-<b>manual de como instalar o sistema</b>
-<b>1º instalar o docker</b><br>
-<b>2º instalar os container do docker</b><br>
-<b>3º criar o projeto no laravel</b><br>
-<b>4º criar as migrations, models, controllers, middleware do projeto</b><br>
+<b>manual de como instalar o sistema</b><br>
+1º instalar o docker<br>
+2º instalar os container do docker<br>
+3º criar o projeto no laravel<br>
+4º criar as migrations, models, controllers, middleware do projeto<br>
+
+<Sistema hospedado contém<b><br>
+  login<br>
+  venda<br>
+  item vendas<br>
+  produtos<br>
+  item entrada<br>
+  entrada<br>

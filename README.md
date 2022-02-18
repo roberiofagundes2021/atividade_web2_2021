@@ -11,7 +11,11 @@ perfume-shop é um sistema WEB de vendas de perfume desenvolvido para a discipli
 
 As tecnologias abaixo foram utilizadas para o desenvolvimento do projeto: 
 
-<img src="https://img.shields.io/static/v1?label=&message=PHP&color=black&style=for-the-badge&logo=PHP"/> <img src="https://img.shields.io/static/v1?label=&message=LARAVEL &color=black&style=for-the-badge&logo=LARAVEL"/>  <img src="https://img.shields.io/static/v1?label=&message=BOOTSTRAP &color=black&style=for-the-badge&logo=BOOTSTRAP"/> <img src="https://img.shields.io/static/v1?label=&message=JAVASCRIPT&color=black&style=for-the-badge&logo=JAVASCRIPT"/> <img src="https://img.shields.io/static/v1?label=&message=HTML &color=black&style=for-the-badge&logo=HTML"/>  <img src="https://img.shields.io/static/v1?label=&message=CSS &color=black&style=for-the-badge&logo=CSS3"/>  <img src="https://img.shields.io/static/v1?label=&message=MYSQL &color=black&style=for-the-badge&logo=MYSQL"/>  
+<img src="https://github.com/roberiofagundes2021/atividade_web2_2021/blob/ProjetoII-backend/public/images/boostrap.png"/>
+<img src="https://github.com/roberiofagundes2021/atividade_web2_2021/blob/ProjetoII-backend/public/images/php.jpeg"/>  
+<img src="https://github.com/roberiofagundes2021/atividade_web2_2021/blob/ProjetoII-backend/public/images/html.png"/> 
+<img src="https://github.com/roberiofagundes2021/atividade_web2_2021/blob/ProjetoII-backend/public/images/heroku.png"/>
+<img src="https://github.com/roberiofagundes2021/atividade_web2_2021/blob/ProjetoII-backend/public/images/css.png"/>  <img src="https://github.com/roberiofagundes2021/atividade_web2_2021/blob/ProjetoII-backend/public/images/posgres.jpeg"/>  
 
 
 
@@ -19,17 +23,30 @@ As tecnologias abaixo foram utilizadas para o desenvolvimento do projeto:
 
 * Tela de Login
 
-<img src="https://github.com/MonalyzaLima/web2-2021.1-1/blob/projetoII-backend/codigo/public/img/login.png" width="800">
+<img src="https://github.com/roberiofagundes2021/atividade_web2_2021/blob/ProjetoII-backend/public/images/login.PNG" width="800">
 
+* Tela de Dashboard
+<img src="https://github.com/roberiofagundes2021/atividade_web2_2021/blob/ProjetoII-backend/public/images/tela_dashboard.png" width="800">
 
 * Tela de Vendas
 
-<img src="https://github.com/MonalyzaLima/web2-2021.1-1/blob/projetoII-backend/codigo/public/img/index.png" width="800">
+<img src="https://github.com/roberiofagundes2021/atividade_web2_2021/blob/ProjetoII-backend/public/images/mostrar_vendas.PNG" width="800">
 
 
-* Tela de Cadastro de Vendas
+* tela de exibir clientes
+<img src="https://github.com/roberiofagundes2021/atividade_web2_2021/blob/ProjetoII-backend/public/images/mostrar_clientes.PNG" width="800">
+* tela de exibir marcas
+<img src="https://github.com/roberiofagundes2021/atividade_web2_2021/blob/ProjetoII-backend/public/images/Mostrar_marcas.PNG" width="800">
+* tela de cadastro de categoria
+<img src="https://github.com/roberiofagundes2021/atividade_web2_2021/blob/ProjetoII-backend/public/images/cadastro_categoria.PNG" width="800">
+* tela de exibir itens de vendas
+<img src="hhttps://github.com/roberiofagundes2021/atividade_web2_2021/blob/ProjetoII-backend/public/images/Mostra_itensvendas.PNG" width="800">
+* tela de exibir  categoria
+<img src="https://github.com/roberiofagundes2021/atividade_web2_2021/blob/ProjetoII-backend/public/images/mostrar_categoria.PNG" width="800">
 
-<img src="https://github.com/MonalyzaLima/web2-2021.1-1/blob/projetoII-backend/codigo/public/img/create.png" width="800">
+
+
+
 
 
 
@@ -38,17 +55,17 @@ As tecnologias abaixo foram utilizadas para o desenvolvimento do projeto:
 
 :heavy_check_mark: Login, cadastro de usuario
 
-:heavy_check_mark: Cadastro de marcas
+:heavy_check_mark: exibir informações sobre marcas
 
-:heavy_check_mark: Cadastro, consulta e remoção de Venda
+:heavy_check_mark: exibir informações sobre clientes
 
-:heavy_check_mark: Cadastro, consulta e remoção de Compra
+:heavy_check_mark: exibir informações sobre clientes vendas
 
-:heavy_check_mark: Cadastro, consulta, edição e remoção de Produtos
+:heavy_check_mark: exibir informações sobre clientes categorias
 
-:heavy_check_mark: Cadastro, consulta, edição e remoção de Clientes
+:heavy_check_mark: informações sobre clientes categorias de produtos
 
-:heavy_check_mark: Cadastro, consulta, edição e remoção de Fornecedores
+:heavy_check_mark: informações sobre itens de entradas de produtos
 
 
 
@@ -57,6 +74,7 @@ As tecnologias abaixo foram utilizadas para o desenvolvimento do projeto:
 #### Para acessar é necessário:
 
 - Ter instalado em sua máquina o PHP 7.0.0 ou versão superior: <a href="https://www.php.net/downloads">Download PHP</a>.
+- laravel ui :<a https://www.keniaferreira.com/2020/05/ativar-sistema-de-login-laravel-70.html</a>
 
 - Clonar este repositório em sua máquina:
 

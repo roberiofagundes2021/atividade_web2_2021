@@ -59,11 +59,11 @@ As tecnologias abaixo foram utilizadas para o desenvolvimento do projeto:
 
 :heavy_check_mark: exibir informações sobre clientes
 
-:heavy_check_mark: exibir informações sobre clientes vendas
+:heavy_check_mark: exibir informações sobre vendas
 
-:heavy_check_mark: exibir informações sobre clientes categorias
+:heavy_check_mark: exibir informações sobre categorias
 
-:heavy_check_mark: informações sobre clientes categorias de produtos
+:heavy_check_mark: informações sobre entradas de produtos
 
 :heavy_check_mark: informações sobre itens de entradas de produtos
 

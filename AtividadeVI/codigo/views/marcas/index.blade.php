@@ -1,0 +1,57 @@
+@extends('layouts.main')
+
+@section('titulo','Sistema de Venda')
+
+
+@section('conteudo')
+
+
+
+<table class="table table-sm">
+    <caption>Tabela de marcas</caption>
+  @foreach ($Marcas as $Marca) 
+    <div id="row">
+        <thead>        
+            <th>nome</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            
+        </thead>
+         <thead>
+            <td>{{$Marca->nome}}</td>
+                <td align="center">
+                   <form action="../marcas/{{$Marca->marca_id}}" method="post">
+                    @csrf
+                    @method('DELETE')   
+                    <input type="submit" class="button" value="deletar">
+
+                    </form> 
+                </td>
+                
+                <td>
+                    <form action="{{route('marca.create')}}" method="post">
+                        @csrf
+                        <input type="submit" class="button" name="formulario" value="novo">
+                    </form>
+                </td>
+
+                <td>
+                    <form action="{{route('marca.edit', ['id' => $Marca->id])}}" method="post">
+                        @csrf
+                        <input type="submit" class="button" name="formulario" value="alterar">
+                    </form>
+                </td>
+            </thead>
+ 
+         </div>
+    
+    </div>
+@endforeach  
+</table>
+
+
+@endsection('conteudo')
+@section('footer')
+
+@endsection('footer')

@@ -1,0 +1,100 @@
+roberiofagundes@roberiofagundes-Lenovo-IdeaPad-S145-15IGM:~$ su
+Senha: 
+root@roberiofagundes-Lenovo-IdeaPad-S145-15IGM:/home/roberiofagundes# cd Documentos
+root@roberiofagundes-Lenovo-IdeaPad-S145-15IGM:/home/roberiofagundes/Documentos# cd projetos
+root@roberiofagundes-Lenovo-IdeaPad-S145-15IGM:/home/roberiofagundes/Documentos/projetos# cd laradock
+root@roberiofagundes-Lenovo-IdeaPad-S145-15IGM:/home/roberiofagundes/Documentos/projetos/laradock# docker-compose up -d mysql phpmyadmin apache2 redis workspace
+Starting laradock_docker-in-docker_1 ... done
+Starting laradock_redis_1            ... done
+Starting laradock_mysql_1            ... done
+Starting laradock_workspace_1        ... done
+Starting laradock_phpmyadmin_1       ... done
+Starting laradock_php-fpm_1          ... done
+Starting laradock_apache2_1          ... done
+root@roberiofagundes-Lenovo-IdeaPad-S145-15IGM:/home/roberiofagundes/Documentos/projetos/laradock# docker-compose exec workspace /bin/bash
+
+root@ef0a3f430308:/var/www/projeto# php artisan make:model Entrada -mc
+Model created successfully.
+Created Migration: 2021_10_23_234450_create_entradas_table
+Controller created successfully.
+root@ef0a3f430308:/var/www/projeto# 
+
+root@ef0a3f430308:/var/www/projeto# php artisan make:migration create_entradas_table
+Created Migration: 2021_10_24_000634_create_entradas_table
+root@ef0a3f430308:/var/www/projeto# php artisan migrate
+Migrating: 2021_10_24_000634_create_entradas_table
+Migrated:  2021_10_24_000634_create_entradas_table (542.83ms)
+root@ef0a3f430308:/var/www/projeto# 
+
+root@ef0a3f430308:/var/www/projeto# php artisan make:model Produto -mc
+Model created successfully.
+Created Migration: 2021_10_24_000915_create_produtos_table
+Controller created successfully.
+root@ef0a3f430308:/var/www/projeto# 
+
+root@ef0a3f430308:/var/www/projeto# php artisan make:model Marca -mc
+Model created successfully.
+Created Migration: 2021_10_24_001129_create_marcas_table
+Controller created successfully.
+root@ef0a3f430308:/var/www/projeto# 
+
+root@ef0a3f430308:/var/www/projeto# php artisan make:model Marca -mc
+Model created successfully.
+Created Migration: 2021_10_24_001440_create_marcas_table
+Controller created successfully.
+root@ef0a3f430308:/var/www/projeto# php artisan migrate
+Migrating: 2021_10_24_001440_create_marcas_table
+Migrated:  2021_10_24_001440_create_marcas_table (257.73ms)
+root@ef0a3f430308:/var/www/projeto# 
+
+root@ef0a3f430308:/var/www/projeto# php artisan make:model Categoria -mc
+Model created successfully.
+Created Migration: 2021_10_24_001649_create_categorias_table
+Controller created successfully.
+root@ef0a3f430308:/var/www/projeto# php artisan migrate
+Migrating: 2021_10_24_001649_create_categorias_table
+Migrated:  2021_10_24_001649_create_categorias_table (235.04ms)
+root@ef0a3f430308:/var/www/projeto# 
+
+root@ef0a3f430308:/var/www/projeto# php artisan make:model Produto -mc
+Model created successfully.
+root@ef0a3f430308:/var/www/projeto# php artisan migrate
+Migrating: 2021_10_24_002351_create_produtos_table
+Migrated:  2021_10_24_002351_create_produtos_table (1,062.32ms)
+root@ef0a3f430308:/var/www/projeto# 
+
+
+root@ef0a3f430308:/var/www/projeto# php artisan make:model ItensEntradas -mc
+Model created successfully.
+Created Migration: 2021_10_24_003613_create_itens_entradas_table
+Controller created successfully.
+root@ef0a3f430308:/var/www/projeto# php artisan migrate
+Migrating: 2021_10_24_003613_create_itens_entradas_table
+Migrated:  2021_10_24_003613_create_itens_entradas_table (1,238.52ms)
+root@ef0a3f430308:/var/www/projeto# 
+
+root@ef0a3f430308:/var/www/projeto# php artisan make:model Vendas -mc
+Model created successfully.
+Created Migration: 2021_10_24_005124_create_vendas_table
+Controller created successfully.
+root@ef0a3f430308:/var/www/projeto# php artisan migrate
+Migrating: 2021_10_24_005124_create_vendas_table
+
+root@ef0a3f430308:/var/www/projeto# php artisan make:migration create_itens_vendas_table
+Created Migration: 2021_10_24_105911_create_itens_vendas_table
+root@ef0a3f430308:/var/www/projeto# php artisan migrate
+Migrating: 2021_10_24_105911_create_itens_vendas_table
+Migrated:  2021_10_24_105911_create_itens_vendas_table (1,013.91ms)
+root@ef0a3f430308:/var/www/projeto# 
+
+
+
+
+
+
+
+
+
+
+
+

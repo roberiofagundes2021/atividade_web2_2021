@@ -1,0 +1,123 @@
+#header{
+	background: #E9967A;
+	color: #000000;
+	font-family: Avantgarde;
+	padding: 20px;
+	text-align: center;
+	width: auto;
+	height: auto;
+
+}
+
+#nav{
+	background: #FFC0CB;
+	height: 50px;
+	text-decoration: #ffffff;
+	font-family: Avantgarde;
+	width: auto;
+	text-decoration: none;
+	list-style: none;
+	height: auto;
+}
+
+#menu-h{
+	list-style: none;
+	padding: 0;
+	background: #ffffff;
+	width: auto;
+	text-align:center;
+	height: auto;
+
+}
+
+
+#menu-h li{
+	/*colocar em linha*/
+	display: inline-block;
+	height: auto;
+}
+
+#menu-h li a{
+	/*retira o sublinhado do menu*/
+	text-decoration: none;
+	color: black;
+	/*padding são os espaços*/
+	padding: 10px;
+	height: auto;
+}
+/*para quando passa o mouse mudar de cor*/
+#menu-h li a:hover{
+	background: blue;
+	height: auto;
+}
+
+#tabela{
+	margin:auto;
+}
+
+
+#footer{
+	background: #E9967A;
+	height:auto;
+	color: #000000;
+	margin-top: 0px;
+	padding: 0px;
+	font-family: Avantgarde;
+	width: 1400px;
+
+	/*para o rodapé no final da pagina */
+	position: fixed;
+    bottom:0;
+    left:0;
+    text-align: center;
+}
+
+#container{
+	width: auto;
+	height:auto;
+  left:50%;
+  top:70%;
+  margin-left:50px;
+  margin-right:50px;
+  margin-top:10px;
+  display: grid;
+  background: #ADD8E6;
+  padding: 40px;
+  padding-top:10px;
+  padding-right: 15px;
+  font-family: Avantgarde;
+   
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: auto;
+}
+
+
+
+
+#cabecario{
+	background: #E6E6FA;
+	height: 50px;
+	text-decoration: #fff;
+	margin: auto;
+	height: auto;
+
+}
+.button{
+	background: ##FF0000;
+	color: #000000;
+	height: auto;
+
+}
+
+body{
+	background: #ffffff;
+	width:auto;
+	height: auto;
+	font-family: Avantgarde;
+
+}
+
+
+

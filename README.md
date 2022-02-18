@@ -35,26 +35,26 @@ Atividade III
 :heavy_check_mark: <a href="https://github.com/roberiofagundes2021/atividade_web2_2021/tree/AtividadeIV">
 Atividade IV
   
-:heavy_check_mark: <a href="https://github.com/MonalyzaLima/web2-2021.1-1/tree/AtividadeIV-correção">
+:heavy_check_mark: <a href="https://github.com/roberiofagundes2021/atividade_web2_2021/tree/AtividadeIV">
 Atividade IV 
   
-:heavy_check_mark: <a href="https://github.com/MonalyzaLima/web2-2021.1-1/tree/AtividadeV">
+:heavy_check_mark: <a href="https://github.com/roberiofagundes2021/atividade_web2_2021/tree/Atividade-V">
 Atividade V 
   
-:heavy_check_mark: <a href="https://github.com/MonalyzaLima/web2-2021.1-1/tree/AtividadeVI">
+:heavy_check_mark: <a href="https://github.com/roberiofagundes2021/atividade_web2_2021/tree/Atividade-VI">
 Atividade VI
   
-:heavy_check_mark: <a href="https://github.com/MonalyzaLima/web2-2021.1-1/tree/AtividadeVII">
+:heavy_check_mark: <a href="https://github.com/roberiofagundes2021/atividade_web2_2021/tree/AtividadeVII">
 Atividade VII 
   
 > ##  Branches dos projetos:
 :heavy_check_mark:<a href="https://github.com/roberiofagundes2021/atividade_web2_2021/tree/Projeto1-1Unidade">
 Projeto I
   
-:heavy_check_mark:<a href="">
+:heavy_check_mark:<a href="https://github.com/roberiofagundes2021/atividade_web2_2021/tree/ProjetoII-layout">
 Projeto II layout
   
-:heavy_check_mark:<a href="">
+:heavy_check_mark:<a href="https://github.com/roberiofagundes2021/atividade_web2_2021/tree/ProjetoII-backend">
 Projeto II backend
  
  

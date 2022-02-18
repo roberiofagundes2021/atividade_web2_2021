@@ -22,17 +22,11 @@ As tecnologias abaixo foram utilizadas para o desenvolvimento do projeto:
 > ## Layout
 
 * Tela de Login
-
 <img src="https://github.com/roberiofagundes2021/atividade_web2_2021/blob/ProjetoII-backend/public/images/login.PNG" width="800">
-
 * Tela de Dashboard
 <img src="https://github.com/roberiofagundes2021/atividade_web2_2021/blob/ProjetoII-backend/public/images/tela_dashboard.png" width="800">
-
 * Tela de Vendas
-
 <img src="https://github.com/roberiofagundes2021/atividade_web2_2021/blob/ProjetoII-backend/public/images/mostrar_vendas.PNG" width="800">
-
-
 * tela de exibir clientes
 <img src="https://github.com/roberiofagundes2021/atividade_web2_2021/blob/ProjetoII-backend/public/images/mostrar_clientes.PNG" width="800">
 * tela de exibir marcas

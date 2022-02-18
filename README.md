@@ -1,3 +1,60 @@
 # atividade_web2_2021
 
-Aqui nesse repositório estão as atividades realizadas na disciplina Laboratório de Programação Web II - Semestre 2021.1 do curso de Análise e Desenvolvimento de Sistemas fornecido pelo  Instituto Federal de Educação, Ciência e Tecnologia Baiano - Campus Guanambi, sobre orientação do professor Fabio dos Santos Lima
+Aqui nesse repositório estão as atividades realizadas na disciplina Laboratório de Programação Web II - Semestre 2021.1 do curso de Análise e Desenvolvimento de Sistemas fornecido pelo  Instituto Federal de Educação, Ciência e Tecnologia Baiano - Campus Guanambi, sobre orientação do professor Fabio dos Santos Lima<br><br>
+
+<b>Branches das atividades:</b><br><br>
+Atividade-I<br>
+<b>descrição</b><br>
+
+ Atividade-II<br>
+ <b>descrição</b><br>
+ 
+https://github.com/roberiofagundes2021/atividade_web2_2021/tree/atividade-II<br>
+ Atividade-III<br>
+ <b>descrição</b><br>
+ https://github.com/roberiofagundes2021/atividade_web2_2021/tree/atividade-III<br>
+ 
+ Atividade-IV<br>
+  <b>descrição</b><br>
+ Atividade-V<br>
+ <b>descrição</b><br>
+ 
+ Atividade-VI<br>
+ <b>descrição</b><br>
+ 
+ Atividade-VII<br>
+ <b>descrição</b><br>
+ 
+ ##  Branches das atividades:
+:heavy_check_mark:<a href="https://github.com/roberiofagundes2021/atividade_web2_2021">
+Atividade II
+  
+:heavy_check_mark:<a href="https://github.com/roberiofagundes2021/atividade_web2_2021/tree/Atividade-III">
+Atividade III
+  
+:heavy_check_mark: <a href="https://github.com/roberiofagundes2021/atividade_web2_2021/tree/AtividadeIV">
+Atividade IV
+  
+:heavy_check_mark: <a href="https://github.com/MonalyzaLima/web2-2021.1-1/tree/AtividadeIV-correção">
+Atividade IV 
+  
+:heavy_check_mark: <a href="https://github.com/MonalyzaLima/web2-2021.1-1/tree/AtividadeV">
+Atividade V 
+  
+:heavy_check_mark: <a href="https://github.com/MonalyzaLima/web2-2021.1-1/tree/AtividadeVI">
+Atividade VI
+  
+:heavy_check_mark: <a href="https://github.com/MonalyzaLima/web2-2021.1-1/tree/AtividadeVII">
+Atividade VII 
+  
+> ##  Branches dos projetos:
+:heavy_check_mark:<a href="https://github.com/roberiofagundes2021/atividade_web2_2021/tree/Projeto1-1Unidade">
+Projeto I
+  
+:heavy_check_mark:<a href="">
+Projeto II layout
+  
+:heavy_check_mark:<a href="">
+Projeto II backend
+ 
+ 
